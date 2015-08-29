@@ -28,7 +28,7 @@ body {
   }
 
   to {
-    transform: translateY(-25px);
+    transform: translateY(-30px);
     opacity: 0;
   }
 }
@@ -38,7 +38,7 @@ body {
 /*Main card*/
 @Keyframes FadeInDownSmall {
     from {
-        transform: translateY(-25px);
+        transform: translateY(-30px);
         opacity: 0;
     }
     to {
@@ -118,6 +118,7 @@ body {
   height: 90vh;
   margin: 0 auto;
 }
+
 .card {
   padding: 20px;
   background: rgba(255, 255, 255, 0.85);
@@ -126,7 +127,7 @@ body {
   border: 1px solid rgba(0,0,0,.1);
   position: absolute;
   width: 100%;
-  top: 50%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
