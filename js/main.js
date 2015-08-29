@@ -1,8 +1,8 @@
 var images = [{
-    src: 'images/barley_closeupx1536.jpg',
+    src: 'images/barleyx1536.jpg',
     img: null
 }, {
-    src: 'images/barleyx1536.jpg',
+    src: 'images/barley_closeupx1536.jpg',
     img: null
 }, {
     src: 'images/boatx1536.jpg',
@@ -15,69 +15,73 @@ var images = [{
     img: null
 }, ];
 
-var index = 0;
-var curIndex = 0;
 
-// Preload images
-var loadedImages = images.map(function () {
-    return null;
-});
-images.forEach(function (currentValue, index) {
+var Tolland = {
+    imageIndex: 0,
+    imageBehind: document.getElementsByClassName('image__behind')[0],
+    imageInfront: document.getElementsByClassName('image__infront')[0],
+    init: function(){
+        // Set up link buttons
+        Tolland.bindUIActions();
 
-    var img = new Image();
-    img.addEventListener('load', function () {
-        currentValue.img = img;
-        loadedImages[index] = currentValue;
-        replaceLowRes();
-    });
-    img.src = currentValue.src;
+        // Load images and swap in high res source when that loads
+        Tolland.preloadImages();
 
-});
+        // Set up image changing
+        setInterval(Tolland.changeHeader, 5000);
+    },
+    bindUIActions: function(){
+        // TODO Link buttons
 
-function replaceLowRes() {
-    if (!loadedImages[0]) {
-        return;
+    },
+    preloadImages: function(){
+        images.forEach(function (thatImage) {
+            // Make empty js image object
+            var imgObj = new Image();
+
+            // Create image load event listener
+            imgObj.addEventListener('load', function () {
+                thatImage.img = imgObj; 
+                Tolland.replaceLowRes();
+            });
+            // Make request for image to load
+            imgObj.src = thatImage.src;
+        });        
+    },
+    replaceLowRes: function() {
+        //Image load event callbacks can finish at different times. We only was the first image
+        if (!images[0].img){
+            return;
+        }
+        // If we have the high res first image loaded, swap out the low res version
+        if (Tolland.imageInfront && !Tolland.imageIndex)
+            Tolland.imageInfront.style.backgroundImage = 'url(\'' + images[0].src + '\')';
+        if (Tolland.imageBehind && !Tolland.imageIndex)
+            Tolland.imageBehind.style.backgroundImage = 'url(\'' + images[0].src + '\')';
+    },
+    changeHeader: function() {
+        /*
+            Index in incr and behind image gets new source. 
+            After a wait, infront image gets faded out cause of .old which shows new image behind. 
+            Transistionend listener fires so infront source is changed and .old is removed 
+        */
+
+        Tolland.imageInfront.addEventListener('transitionend', function () {
+            Tolland.imageInfront.style.backgroundImage = 'url(\'' + images[Tolland.imageIndex].src + '\')';
+            Tolland.imageInfront.classList.remove('old');
+        });
+        // Increment index
+        while (images[++Tolland.imageIndex] === null);
+        // Wrap index arround if it goes > length
+        Tolland.imageIndex = Tolland.imageIndex % images.length;
+
+        // Change image thats out of view and wait to make sure it's changed before fading the infront out
+        Tolland.imageBehind.style.backgroundImage = 'url(\'' + images[Tolland.imageIndex].src + '\')';
+        setTimeout(function () {
+            Tolland.imageInfront.classList.add('old');
+        }, 450);
+
     }
-    var mainSplashImage = document.getElementsByClassName('splash-image__main')[0];
-    var currentSplashImage = document.getElementsByClassName('splash-image__secondary')[0];
-    if (currentSplashImage && !index)
-        currentSplashImage.style.backgroundImage = 'url(\'' + images[0].src + '\')';
-    if (mainSplashImage && !index)
-        mainSplashImage.style.backgroundImage = 'url(\'' + images[0].src + '\')';
-}
+};
 
-
-function changeHeader() {
-
-    var mainSplashImage = document.getElementsByClassName('splash-image__main')[0];
-    var currentSplashImage = document.getElementsByClassName('splash-image__secondary')[0];
-
-    currentSplashImage.addEventListener('transitionend', function () {
-        currentSplashImage.style.backgroundImage = 'url(\'' + loadedImages[index].src + '\')';
-        currentSplashImage.classList.remove('old');
-    });
-
-    while (loadedImages[++index] === null);
-    index = index % loadedImages.length;
-
-    if (index === curIndex) {
-        return;
-    }
-
-    curIndex = index;
-
-    mainSplashImage.style.backgroundImage = 'url(\'' + loadedImages[index].src + '\')';
-
-    setTimeout(function () {
-        currentSplashImage.classList.add('old');
-    }, 900);
-
-}
-
-function main() {
-    // Set up image changing
-    replaceLowRes();
-    setInterval(changeHeader, 5750);
-}
-
-document.addEventListener('DOMContentLoaded', main);
+document.addEventListener('DOMContentLoaded', Tolland.init);

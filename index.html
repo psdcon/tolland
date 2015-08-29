@@ -31,11 +31,14 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><strong>Login</strong></a></li>
-                    <li><a href="#"><strong>Contact</strong></a></li>
                     <li>
-                        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">
-                          Launch demo modal
+                        <button type="button" class="btn btn-link" data-toggle="card" data-target=".login">
+                            <strong>Login</strong>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-link" data-toggle="card" data-target=".contact">
+                            <strong>Contact</strong>
                         </button>
                     </li>
                 </ul>
@@ -44,26 +47,34 @@
         </div>
     </nav>
     <div class="container-fluid">
-        <div class="splash-container">
-            <div class="splash-content">
-                <div class="splash-image__main"></div>
-                <div class="splash-image__secondary"></div>
+        <!-- Images -->
+        <div class="background-container">
+            <div class="background-images">
+                <div class="image__behind"></div>
+                <div class="image__infront"></div>
             </div>
         </div>
-
-        <div class="card-container animated fadeInDownSmall">
-            <div class="card description">
-                <p>Since 1931 James Tolland &amp; Co Ltd, has been supplying grains and feed ingredients to the animal feed industry within the United Kingdom and Ireland. Operating out of the Port of Belfast customers can collect goods from our quayside store or from other ports within the island of Ireland.</p>
-                 
-                <p>As members of NIGTA, COCERAL and the Organic Food Federation, all goods are quality assured, sourced from certified companies providing full traceability thus giving you peace of mind.</p>
-                 
-                <p>We offer our customers a wide range of agricultural ingredients including Cereals, Wheatfeed, Soya, Rapemeal, Soya Hulls, Corn Gluten, Corn Distillers, Sugar Beet and Fishmeal.</p>
-                 
-                <p>Our aim is to provide customers with up-to-date market information so they can react to market trends and through our portal, assist with their management of all financial and stock transactions with us.</p>
-            </div>
-            <div class="card contact hidden">
-                <iframe width="600" height="450" frameborder="0" style="border:0"
-                src="https://www.google.com/maps/embed/v1/place?q=James%20Tolland%20%26%20Co%20Ltd%2C%20Milewater%20Road%2C%20Belfast%2C%20United%20Kingdom&key=..." allowfullscreen></iframe>
+        
+        <div class="content-padding">
+            <div class="card-container animated fadeInDownSmall">
+                <div class="card description">
+                    <p>Since 1931 James Tolland &amp; Co Ltd, has been supplying grains and feed ingredients to the animal feed industry within the United Kingdom and Ireland. Operating out of the Port of Belfast customers can collect goods from our quayside store or from other ports within the island of Ireland.</p>
+                     
+                    <p>As members of NIGTA, COCERAL and the Organic Food Federation, all goods are quality assured, sourced from certified companies providing full traceability thus giving you peace of mind.</p>
+                     
+                    <p>We offer our customers a wide range of agricultural ingredients including Cereals, Wheatfeed, Soya, Rapemeal, Soya Hulls, Corn Gluten, Corn Distillers, Sugar Beet and Fishmeal.</p>
+                     
+                    <p>Our aim is to provide customers with up-to-date market information so they can react to market trends and through our portal, assist with their management of all financial and stock transactions with us.</p>
+                </div>
+                <div class="card login hidden">
+                    
+                </div>
+                <div class="card contact hidden">
+                    <!-- 4:3 aspect ratio -->
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed/v1/place?q=James%20Tolland%20%26%20Co%20Ltd%2C%20Milewater%20Road%2C%20Belfast%2C%20United%20Kingdom&key=AIzaSyCSNF9xa5Xb3DDeQx5esehgLFqMqRbGdRw" allowfullscreen></iframe>
+                    </div>
+                </div>
             </div>
         </div>
 
