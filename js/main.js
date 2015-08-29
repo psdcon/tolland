@@ -36,30 +36,61 @@ var Tolland = {
             var targetSelector = $(this).data('target');
             var $target = $(targetSelector);
 
-            console.log($target);
-
-            $('.card-container').removeClass('fadeInDownSmall');
-            // Set up animationEnd listener so that when faded out, new content fades in
-            $('.card-container').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-                $('.card:not(.hidden)').addClass('hidden');
-                $target.removeClass('hidden');
-                $(this).removeClass('fadeOutUp');
-                $(this).addClass('fadeInDownSmall');
-            });
-            $('.card-container').addClass('fadeOutUp');
+            Tolland.animateCardContainer($target);
         });
 
         $('.close').click(function () {
-            $('.card-container').removeClass('fadeInDownSmall');
-            // Set up animationEnd listener so that when faded out, new content fades in
-            $('.card-container').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-                $('.card:not(.hidden)').addClass('hidden');
-                $('.description').removeClass('hidden');
-                $(this).removeClass('fadeOutUp');
-                $(this).addClass('fadeInDownSmall');
-            });
-            $('.card-container').addClass('fadeOutUp');
+            Tolland.animateCardContainer($('.description'));
         });
+        $('.navbar-brand').click(function () {
+            Tolland.animateCardContainer($('.description'));
+        });
+    },
+    // animateCardContainer: function($targetCard){
+    //     // Fade card up and out
+    //     $('.card-container').removeClass('fadeInDownSmall').addClass('fadeOutUp');
+    //     // Fade
+    //     $('.card:not(.hidden)').addClass('fadeOut').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+    //         $(this).addClass('hidden');
+    //     });
+
+    //     $targetCard.removeClass('hidden fadeOut').addClass('fadeIn');
+    //     setInterval(function(){
+    //         $('.card-container').removeClass('fadeOutUp').addClass('fadeInDownSmall');
+    //     }, 400);
+    // },
+    animateCardContainer: function($targetCard){
+        // If the navbar on mobile is expanded, close it
+        if ($('.navbar-collapse').hasClass('in'))
+            $(".navbar-toggle").click();
+
+        // Do nothing if requested card is already showing
+        if ($targetCard.hasClass('active')){
+            return;
+        }
+
+        // Fade out active card
+        $active = $('.card.active');
+        $active.removeClass('fadeInDownSmall').addClass('fadeOutUp');
+        $active.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+            $active.removeClass('active').removeClass('fadeOutUp');
+        });
+
+        // Fade in selected card
+        $targetCard.addClass('fadeInDownSmall').addClass('active');
+
+        
+        // Set up animationEnd listener so that when faded out, new content fades in
+        // $('.card-container').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+        //     $('.card.active').removeClass('active');
+        //     $targetCard.addClass('active');
+        //     // Fade back in the container
+        //     $(this).removeClass('fadeOutUp');
+        //     $(this).addClass('fadeInDownSmall');
+        // });
+        // // Fade out the container
+        // $('.card-container').removeClass('fadeInDownSmall');
+        // $('.card-container').addClass('fadeOutUp');
     },
     preloadImages: function(){
         images.forEach(function (thatImage) {
