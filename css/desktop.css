@@ -1,4 +1,8 @@
 .card {
     width: 60%;
-	top: 40px;
+    top: 40px;
+    left: 20%;
+}
+.embed-responsive-16by9 {
+    padding-bottom: 56.25%;
 }
