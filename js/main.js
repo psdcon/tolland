@@ -32,7 +32,34 @@ var Tolland = {
     },
     bindUIActions: function(){
         // TODO Link buttons
+        $('*[data-toggle="card"]').click(function () {
+            var targetSelector = $(this).data('target');
+            var $target = $(targetSelector);
 
+            console.log($target);
+
+            $('.card-container').removeClass('fadeInDownSmall');
+            // Set up animationEnd listener so that when faded out, new content fades in
+            $('.card-container').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+                $('.card:not(.hidden)').addClass('hidden');
+                $target.removeClass('hidden');
+                $(this).removeClass('fadeOutUp');
+                $(this).addClass('fadeInDownSmall');
+            });
+            $('.card-container').addClass('fadeOutUp');
+        });
+
+        $('.close').click(function () {
+            $('.card-container').removeClass('fadeInDownSmall');
+            // Set up animationEnd listener so that when faded out, new content fades in
+            $('.card-container').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+                $('.card:not(.hidden)').addClass('hidden');
+                $('.description').removeClass('hidden');
+                $(this).removeClass('fadeOutUp');
+                $(this).addClass('fadeInDownSmall');
+            });
+            $('.card-container').addClass('fadeOutUp');
+        });
     },
     preloadImages: function(){
         images.forEach(function (thatImage) {
