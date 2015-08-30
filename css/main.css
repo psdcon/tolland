@@ -95,7 +95,7 @@ Content container
 /*remove padding for full width images*/
 .container-fluid {
     position: relative;
-    padding: 60px 0 0; /*Padding top for navbar*/
+    padding: 60px 0 60px 0; /*Padding top for navbar*/
 }
 
 /*Big background image*/
@@ -141,6 +141,7 @@ Content container
 
     width: calc(100% - 4em);
     margin: 0 auto;
+    margin-bottom: 40px;
 
     background: rgba(255, 255, 255, 0.85);
     border-radius: 2px;
