@@ -104,7 +104,7 @@
 /*Big background image*/
 .image__infront, .image__behind {
     position: fixed;
-    top: 0;
+    /*top: 0;*/
     right: 0;
     bottom: 0;
     left: 0;
