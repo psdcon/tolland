@@ -17,13 +17,13 @@ var images = [{
 
 var Tolland = {
     imageIndex: 0,
-    imageBehind: document.getElementsByClassName('image__behind')[0],
     imageInfront: document.getElementsByClassName('image__infront')[0],
+    imageBehind: document.getElementsByClassName('image__behind')[0],
     init: function(){
         // Correct the background height. 
         // Important for mobile browsers where the adress bar scrolls offscreen so the viewport height changes
-        imageInfront.height(screen.height);
-        imageBehind.height(screen.height);
+        Tolland.imageInfront.style.height = screen.height;
+        Tolland.imageBehind.style.height = screen.height;
 
         // Set up link buttons
         Tolland.bindUIActions();
