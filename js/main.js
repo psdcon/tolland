@@ -15,19 +15,21 @@ var images = [{
     img: null
 }, ];
 
+// Correct the background height. 
+// Important for mobile browsers where the adress bar scrolls offscreen so the viewport height changes
+var bg = $(".image__behind, .image__infront");
+$(window).resize("resizeBackground");
+function resizeBackground() {
+    bg.height(screen.height);
+}
+resizeBackground();
+
 var Tolland = {
     imageIndex: 0,
     imageInfront: document.getElementsByClassName('image__infront')[0],
     imageBehind: document.getElementsByClassName('image__behind')[0],
     init: function(){
-        // Correct the background height. 
-        // Important for mobile browsers where the adress bar scrolls offscreen so the viewport height changes
-        var bg = $(".image__behind, .image__infront");
-        function resizeBackground() {
-            bg.height(screen.height);
-        }
-        resizeBackground();
-        $(window).resize("resizeBackground");
+        
 
         // Set up link buttons
         Tolland.bindUIActions();
