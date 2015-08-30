@@ -20,7 +20,7 @@ var images = [{
 var bg = $(".image__behind, .image__infront");
 $(window).resize("resizeBackground");
 function resizeBackground() {
-    bg.height(screen.height);
+    bg.height(screen.height + 100);
 }
 resizeBackground();
 
