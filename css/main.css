@@ -1,8 +1,3 @@
-body {
-    /*min-height: 2000px;*/
-    padding-top: 50px;
-}
-
 /*Animation stuff*/
 .animated {
     animation-duration: 0.8s;
@@ -35,12 +30,14 @@ body {
 }
 @keyframes fadeOutUp {
     from {
-        transform: translateY(0);
+        /*transform: translateY(0);*/
+        transform: rotateY(0);
         opacity: 1;
     }
 
     to {
-        transform: translateY(-60px);
+        transform: rotateY(90deg);
+        /*transform: translateY(60px);*/
         opacity: 0;
     }
 }
@@ -62,20 +59,25 @@ body {
     display: block;
     animation-name: FadeInDownSmall;
 }
+/*</animation stuff>*/
 
+/*
+Navbar
+*/
 .navbar-brand {
     padding: 0;
 }
 .navbar-brand img {
     height: 100%;
 }
-
+/*navbar colour and fade in*/
 .navbar-default {
+    animation-delay: 0.5s;
+    border-color: transparent;
     /*background-color: rgb(190, 196, 208);*/
     background-color: rgb(144, 141, 210);
-    border-color: transparent;
-    animation-delay: 0.5s;
 }
+/*Make buttons btn-link look like navbar links would*/
 .navbar-default .btn-link {
     line-height: 20px;
     position: relative;
@@ -87,39 +89,30 @@ body {
     background-color: transparent;
 }
 
+/*
+Content container
+*/
+/*remove padding for full width images*/
 .container-fluid {
     position: relative;
-    padding: 0;
+    padding: 60px 0 0; /*Padding top for navbar*/
 }
 
-/*Big image background*/
-.background-container {
-    position: fixed;
-    display: table;
-    width: 100%;
-    height: 100vh;
-    top: 0;
-}
-.background-images {
-    display: table-cell;
-    width: 100%;
-    height: 100%;
-    min-height: 380px;
-    padding: 40px;
-    text-align: center;
-    vertical-align: middle;
-    position: relative;
-}
+/*Big background image*/
 .image__infront, .image__behind {
-    position: absolute;
+    position: fixed;
     top: 0;
-    left: 0;
     right: 0;
+    left: 0;
     bottom: 0;
     height: 100vh;
-    background-size: cover;
-    background-position: center center;
+
+    height: 100%;
     background-image: url('../../images/barleyx1536.jpg');
+    background-position: center center;
+    background-size: cover;
+    will-change: transform;
+    /*background-attachment: fixed;*/
 }
 
 .image__behind {
@@ -134,37 +127,47 @@ body {
     opacity: 0;
 }
 
-/*Page content*/
+/*Text content*/
+/*Relative continaer for absolutely positioned cards*/
+.card-container{
+	position: relative;
+}
 .card {
-    /*Hide by default*/
-    display: none;
-    margin: 1em auto;
-    width: calc(100% - 2em);
-    padding: 1em;
+        transform-origin: -25% center;
+
+    display: none; /*Hide by default, .active makes visible*/
+    position: absolute; /*so animations overlap*/
+    left: 2em;
+
+    width: calc(100% - 4em);
+    margin: 0 auto;
+
     background: rgba(255, 255, 255, 0.85);
     border-radius: 2px;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.2),0 1px 5px 0 rgba(0,0,0,0.12);
     border: 1px solid rgba(0,0,0,0.1);
-    position: absolute;
-    /*width is 60% on desktop*/
-    left: 1em;
-    top: 15px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.2),0 1px 5px 0 rgba(0,0,0,0.12);
+
     animation-duration: 0.8s;
     animation-fill-mode: both;
+
 }
 .card.active {
     display: block;
 }
-.card .heading {
+.card__heading {
     text-align: center;
+    padding-bottom: 1em;
+
+}
+.card__heading--padded {
     padding: 1em;
 }
-button.close {
-    padding: 0 2px;
-    margin: -2px 0 10px 0;
+.card__content {
+    padding: 0.5em;
 }
-.card.contact {
-    padding: 0;
+button.close {
+    margin: -2px 0 10px 0;
+    padding: 0 2px;
 }
 .embed-responsive-16by9 {
     padding-bottom: 100%;
