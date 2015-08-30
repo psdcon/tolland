@@ -18,7 +18,7 @@ var images = [{
 var bg = jQuery(".image__behind, .image__infront");
 jQuery(window).resize("resizeBackground");
 function resizeBackground() {
-    bg.height(jQuery(window).height() + 60);
+    bg.height(screen.height + 60);
 }
 resizeBackground();
 
