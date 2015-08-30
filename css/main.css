@@ -1,50 +1,38 @@
-/*Animation stuff*/
+/*******************************
+		Animation stuff
+********************************/
 .animated {
     animation-duration: 0.8s;
     animation-fill-mode: both;
 }
 /*Navbar*/
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
 .fadeIn {
     animation-name: fadeIn;
 }
 @keyframes fadeOut {
-    from {
-        opacity: 1;
-    }
-
-    to {
-        opacity: 0;
-    }
+    from {opacity: 1;}
+    to {opacity: 0;}
 }
 .fadeOut {
     animation-name: fadeOut;
 }
 @keyframes fadeOutUp {
     from {
-        /*transform: translateY(0);*/
-        transform: rotateY(0);
+        transform: translateY(0);
         opacity: 1;
     }
-
     to {
-        transform: rotateY(90deg);
-        /*transform: translateY(60px);*/
+        transform: translateY(-60px);
         opacity: 0;
     }
 }
 .fadeOutUp {
     animation-name: fadeOutUp;
 }
-/*Main card*/
 @Keyframes FadeInDownSmall {
     from {
         transform: translateY(-30px);
@@ -56,46 +44,77 @@
     }
 }
 .fadeInDownSmall {
-    display: block;
     animation-name: FadeInDownSmall;
 }
 /*</animation stuff>*/
 
-/*
-Navbar
-*/
+/********************
+		Navbar
+*********************/
 .navbar-brand {
     padding: 0;
 }
 .navbar-brand img {
     height: 100%;
 }
-/*navbar colour and fade in*/
+/*Navbar colour and fade in*/
 .navbar-default {
     animation-delay: 0.5s;
-    border-color: transparent;
-    /*background-color: rgb(190, 196, 208);*/
-    background-color: rgb(144, 141, 210);
+
+    border-bottom-width: 3px;
+    border-color: rgb(144, 141, 210);
+    background-color: rgb(190, 196, 208);
 }
 /*Make buttons btn-link look like navbar links would*/
 .navbar-default .btn-link {
-    line-height: 20px;
-    position: relative;
     display: block;
+    position: relative;
     padding: 15px 15px;
+    line-height: 20px;
+    transition: color 0.3s;
+    color: #686664;
+    width: 100%;
+    text-align: center;
 }
-.navbar-default .btn-link:hover {
-    color: #333;
-    background-color: transparent;
+.navbar-default .btn-link:hover, .navbar-default .btn-link:focus {
+    color: #0D122F;
+    text-decoration: none;
+}
+.navbar-default .btn-link:focus {
+    outline: none; /*Thins out yellow :focus border*/
+}
+/*Bar that slides up under link on :hover*/
+.navbar-default .btn-link:after {
+	position: absolute;
+	bottom: -1px;
+	left: 0;
+	width: 100%;
+	height: 3px;
+	background-color: rgb(144, 141, 210);
+	content: '';
+	opacity: 0;
+	transition: opacity 0.3s, transform 0.3s;
+	transform: translateY(4px);
+}
+.navbar-default .btn-link:hover::after,.navbar-default .btn-link:focus::after { 
+    opacity: 1;
+    transform: translateY(0px);
+}
+/*Button for mobile*/
+.navbar-default .navbar-toggle {
+    border-color: rgb(144, 141, 210);
+}
+.navbar-default .navbar-collapse {
+    border: none;
 }
 
-/*
-Content container
-*/
-/*remove padding for full width images*/
+/**********************************
+		Content container
+**********************************/
+/*Remove padding for full width images*/
 .container-fluid {
     position: relative;
-    padding: 60px 0 60px 0; /*Padding top for navbar*/
+    padding: 80px 0 0 0; /*Padding top for navbar*/
 }
 
 /*Big background image*/
@@ -105,42 +124,39 @@ Content container
     right: 0;
     left: 0;
     bottom: 0;
-    height: 100vh;
+    /*height: 100vh;*/
 
     height: 100%;
     background-image: url('../../images/barleyx1536.jpg');
     background-position: center center;
     background-size: cover;
-    will-change: transform;
+    will-change: transform; /*Improves performance*/
     /*background-attachment: fixed;*/
 }
-
 .image__behind {
     opacity: 1;
 }
-
 .image__infront {
     transition: opacity 1.5s ease;
 }
-
 .image__infront.old {
     opacity: 0;
 }
 
-/*Text content*/
+
+/*****************************
+		Text content
+*****************************/
 /*Relative continaer for absolutely positioned cards*/
 .card-container{
 	position: relative;
 }
 .card {
-        transform-origin: -25% center;
+    display: none; /*Hidden by default, .active makes visible*/
+    position: absolute; /*So that animations overlap*/
+    left: 10%; /*Linked to width. Margin: 0 auto doesnt work on absolute*/
 
-    display: none; /*Hide by default, .active makes visible*/
-    position: absolute; /*so animations overlap*/
-    left: 2em;
-
-    width: calc(100% - 4em);
-    margin: 0 auto;
+    width: 80%;
     margin-bottom: 40px;
 
     background: rgba(255, 255, 255, 0.85);
@@ -150,7 +166,6 @@ Content container
 
     animation-duration: 0.8s;
     animation-fill-mode: both;
-
 }
 .card.active {
     display: block;
@@ -158,7 +173,11 @@ Content container
 .card__heading {
     text-align: center;
     padding-bottom: 1em;
-
+    color: #0D122F;
+    font-weight: bold;
+}
+.card__heading a {
+    color: #0D122F;
 }
 .card__heading--padded {
     padding: 1em;
@@ -166,10 +185,34 @@ Content container
 .card__content {
     padding: 0.5em;
 }
+
 button.close {
     margin: -2px 0 10px 0;
     padding: 0 2px;
 }
-.embed-responsive-16by9 {
-    padding-bottom: 100%;
+.embed-responsive {
+    padding-bottom: 130%;
+}
+
+label {
+	color: #0D122F;
+}
+.btn-default {
+	border-color: #D29F01;
+}
+.btn-default:hover, .btn-default:focus, .btn-default:active {
+	border-color: #D29F01;
+}
+.btn.active:focus, .btn:active:focus, .btn:focus {
+	border-color: #D29F01;
+	outline-color: #D29F01;
+}
+
+/*Login form highlighting*/
+.form-control:focus, .form-control:hover{
+	border-color: #D29F01;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 6px rgba(236, 185, 27, 0.8);
+}
+input[type=checkbox]:focus, .btn:focus {
+	outline-color: #D29F01;
 }
