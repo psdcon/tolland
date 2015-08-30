@@ -22,8 +22,12 @@ var Tolland = {
     init: function(){
         // Correct the background height. 
         // Important for mobile browsers where the adress bar scrolls offscreen so the viewport height changes
-        $('.image__infront').height(screen.height);
-        $('.image__behind').height(screen.height);
+        var bg = $(".image__behind, .image__infront");
+        function resizeBackground() {
+            bg.height(screen.height);
+        }
+        resizeBackground();
+        $(window).resize("resizeBackground");
 
         // Set up link buttons
         Tolland.bindUIActions();
