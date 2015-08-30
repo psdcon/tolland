@@ -123,11 +123,11 @@
     position: fixed;
     top: 0;
     right: 0;
-    bottom: 10px;
+    bottom: 0;
     left: 0;
-    /*height: 100vh;*/
+    height: 100vh;
 
-    transition: height 1s;
+    transition: height 10s;
 
     background-image: url('../../images/barleyx960.jpg');
     background-position: center center;
