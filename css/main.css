@@ -83,23 +83,6 @@
 .navbar-default .btn-link:focus {
     outline: none; /*Thins out yellow :focus border*/
 }
-/*Bar that slides up under link on :hover*/
-.navbar-default .btn-link:after {
-	position: absolute;
-	bottom: -1px;
-	left: 0;
-	width: 100%;
-	height: 3px;
-	background-color: rgb(144, 141, 210);
-	content: '';
-	opacity: 0;
-	transition: opacity 0.3s, transform 0.3s;
-	transform: translateY(4px);
-}
-.navbar-default .btn-link:hover::after,.navbar-default .btn-link:focus::after { 
-    opacity: 1;
-    transform: translateY(0px);
-}
 /*Button for mobile*/
 .navbar-default .navbar-toggle {
     border-color: rgb(144, 141, 210);
@@ -121,7 +104,7 @@
 /*Big background image*/
 .image__infront, .image__behind {
     position: fixed;
-    /*top: 0;*/
+    top: 0;
     right: 0;
     bottom: 0;
     left: 0;
@@ -159,7 +142,6 @@
     left: 10%; /*Linked to width. Margin: 0 auto doesnt work on absolute*/
 
     width: 80%;
-    margin-bottom: 50px;
 
     background: rgba(255, 255, 255, 0.85);
     border-radius: 2px;
@@ -171,6 +153,14 @@
 }
 .card.active {
     display: block;
+}
+/*Acts like margin bottom. Actual margin bottom on cards didnt work in safari and edge*/
+.card:after{
+	display: block;
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 60px;
 }
 .card__heading {
     text-align: center;
