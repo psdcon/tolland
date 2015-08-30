@@ -51,19 +51,20 @@
 /********************
 		Navbar
 *********************/
-.navbar-brand {
-    padding: 0;
-}
-.navbar-brand img {
-    height: 100%;
-}
 /*Navbar colour and fade in*/
 .navbar-default {
     animation-delay: 0.5s;
 
     border-bottom-width: 3px;
-    border-color: rgb(144, 141, 210);
-    background-color: rgb(190, 196, 208);
+    border-color: rgba(144, 141, 210, 0.7);
+    background-color: rgba(190, 196, 208, 0.7);
+    transition: opacity 0.3s;
+}
+.navbar-brand {
+    padding: 0;
+}
+.navbar-brand img {
+    height: 100%;
 }
 /*Make buttons btn-link look like navbar links would*/
 .navbar-default .btn-link {
