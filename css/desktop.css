@@ -1,3 +1,12 @@
+.navbar-default {
+    border-color: rgba(144, 141, 210, 0.7);
+    background-color: rgba(190, 196, 208, 0.7);
+}
+.navbar-default:hover {
+    border-color: rgba(144, 141, 210, 1);
+    background-color: rgba(190, 196, 208, 1);
+}
+
 /*Bar that slides up under link on :hover*/
 .navbar-default .btn-link:after {
 	position: absolute;

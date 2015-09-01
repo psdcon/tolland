@@ -56,13 +56,9 @@
     animation-delay: 0.5s;
 
     border-bottom-width: 3px;
-    border-color: rgba(144, 141, 210, 0.7);
-    background-color: rgba(190, 196, 208, 0.7);
-    transition: opacity 0.3s, border-color 0.5s, background-color 0.5s;
-}
-.navbar-default:hover {
     border-color: rgba(144, 141, 210, 1);
     background-color: rgba(190, 196, 208, 1);
+    transition: opacity 0.3s, border-color 0.5s, background-color 0.5s;
 }
 .navbar-brand {
     padding: 0;
@@ -176,6 +172,13 @@
 }
 .card__heading a {
     color: #0A2164;
+}
+.card__heading--main {
+	padding-bottom: 0;
+	text-align: center;
+}
+.card__heading--main img {
+	width: 60%;
 }
 .card__heading--padded {
     padding: 1em;
