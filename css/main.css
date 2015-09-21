@@ -172,6 +172,11 @@
 }
 .card__heading a {
     color: #0A2164;
+    padding-right: 0;
+    padding-left: 0;
+}
+.card__heading a[href^="mailto:"] {
+    display: block;
 }
 .card__heading--main {
 	padding-bottom: 0;

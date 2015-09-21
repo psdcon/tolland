@@ -30,6 +30,13 @@
     left: 20%;
     top: 40px;
 }
+.card__heading a {
+    padding-right: 2em;
+    padding-left: 2em;
+}
+.card__heading a[href^="mailto:"] {
+    display: inline;
+}
 .card__content {
     padding: 1em;
 }

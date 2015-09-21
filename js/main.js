@@ -5,7 +5,7 @@ var images = [{
     src: 'images/barley_closeupx1536.jpg',
     img: null
 }, {
-    src: 'images/boatx1536.jpg',
+    src: 'images/barley_wetx1536.jpg',
     img: null
 }, {
     src: 'images/grainx1536.jpg',
