@@ -222,3 +222,17 @@ label {
 input[type=checkbox]:focus, .btn:focus {
 	outline-color: #D29F01;
 }
+
+/*SVG Stuff*/
+.icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+    margin-right: 8px;
+    text-decoration: none;
+}
+.icon-mail{
+    vertical-align: text-bottom;
+    font-size: 1.3em;
+}
