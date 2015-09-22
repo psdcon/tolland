@@ -1,5 +1,5 @@
 /*******************************
-		Animation stuff
+        Animation stuff
 ********************************/
 .animated {
     animation-duration: 0.8s;
@@ -7,15 +7,23 @@
 }
 /*Navbar*/
 @keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 .fadeIn {
     animation-name: fadeIn;
 }
 @keyframes fadeOut {
-    from {opacity: 1;}
-    to {opacity: 0;}
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
 .fadeOut {
     animation-name: fadeOut;
@@ -49,12 +57,11 @@
 /*</animation stuff>*/
 
 /********************
-		Navbar
+        Navbar
 *********************/
 /*Navbar colour and fade in*/
 .navbar-default {
     animation-delay: 0.5s;
-
     border-bottom-width: 3px;
     border-color: rgba(144, 141, 210, 1);
     background-color: rgba(190, 196, 208, 1);
@@ -78,7 +85,7 @@
     text-align: center;
 }
 .navbar-default .btn-link:hover, .navbar-default .btn-link:focus {
-    color: #0A2164;
+    color: #0a2164;
     text-decoration: none;
 }
 .navbar-default .btn-link:focus {
@@ -94,7 +101,7 @@
 }
 
 /**********************************
-		Content container
+        Content container
 **********************************/
 /*Remove padding for full width images*/
 .container-fluid {
@@ -110,9 +117,7 @@
     bottom: 0;
     left: 0;
     min-height: calc(100vh + 100px);
-
     transition: height 10s;
-
     background-image: url('../../images/barleyx960.jpg');
     background-position: center center;
     background-size: cover;
@@ -131,25 +136,22 @@
 
 
 /*****************************
-		Text content
+        Text content
 *****************************/
 /*Relative continaer for absolutely positioned cards*/
-.card-container{
-	position: relative;
+.card-container {
+    position: relative;
 }
 .card {
     display: none; /*Hidden by default, .active makes visible*/
     position: absolute; /*So that animations overlap*/
     left: 10%; /*Linked to width. Margin: 0 auto doesnt work on absolute*/
-
     width: 80%;
     margin-bottom: 50px;
-
     background: rgba(255, 255, 255, 0.85);
     border-radius: 2px;
     border: 1px solid rgba(0,0,0,0.1);
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.2),0 1px 5px 0 rgba(0,0,0,0.12);
-
     animation-duration: 0.8s;
     animation-fill-mode: both;
 }
@@ -157,33 +159,33 @@
     display: block;
 }
 /*Acts like margin bottom. Actual margin bottom on cards didnt work in safari and edge*/
-.card:after{
-	display: block;
-	content: '';
-	position: absolute;
-	width: 100%;
-	height: 60px;
+.card:after {
+    display: block;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 60px;
 }
 .card__heading {
     text-align: center;
     padding-bottom: 1em;
-    color: #0A2164;
+    color: #0a2164;
     font-weight: bold;
 }
 .card__heading a {
-    color: #0A2164;
+    color: #0a2164;
     padding-right: 0;
     padding-left: 0;
 }
-.card__heading a[href^="mailto:"] {
+.card__heading a[href^='mailto:'] {
     display: block;
 }
 .card__heading--main {
-	padding-bottom: 0;
-	text-align: center;
+    padding-bottom: 0;
+    text-align: center;
 }
 .card__heading--main img {
-	width: 60%;
+    width: 60%;
 }
 .card__heading--padded {
     padding: 1em;
@@ -201,26 +203,26 @@ button.close {
 }
 
 label {
-	color: #0A2164;
+    color: #0a2164;
 }
 .btn-default {
-	border-color: #D29F01;
+    border-color: #d29f01;
 }
 .btn-default:hover, .btn-default:focus, .btn-default:active {
-	border-color: #D29F01;
+    border-color: #d29f01;
 }
 .btn.active:focus, .btn:active:focus, .btn:focus {
-	border-color: #D29F01;
-	outline-color: #D29F01;
+    border-color: #d29f01;
+    outline-color: #d29f01;
 }
 
 /*Login form highlighting*/
-.form-control:focus, .form-control:hover{
-	border-color: #D29F01;
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 6px rgba(236, 185, 27, 0.8);
+.form-control:focus, .form-control:hover {
+    border-color: #d29f01;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 6px rgba(236, 185, 27, 0.8);
 }
 input[type=checkbox]:focus, .btn:focus {
-	outline-color: #D29F01;
+    outline-color: #d29f01;
 }
 
 /*SVG Stuff*/
@@ -232,7 +234,10 @@ input[type=checkbox]:focus, .btn:focus {
     margin-right: 8px;
     text-decoration: none;
 }
-.icon-mail{
+.icon-phone {
+    font-size: 1.1em;
+}
+.icon-mail {
     vertical-align: text-bottom;
     font-size: 1.3em;
 }
