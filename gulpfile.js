@@ -37,5 +37,3 @@ gulp.task('js', function() {
     .pipe(gulp.dest('dist/js'))
     .pipe(browserSync.stream());
 });
-
-// Uploads via ftp any chnages to files on server
