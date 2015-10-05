@@ -1,0 +1,254 @@
+/*******************************
+        Animation stuff
+********************************/
+.animated {
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
+}
+/*Navbar*/
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.fadeIn {
+    animation-name: fadeIn;
+}
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+.fadeOut {
+    animation-name: fadeOut;
+}
+@keyframes fadeOutUp {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-60px);
+        opacity: 0;
+    }
+}
+.fadeOutUp {
+    animation-name: fadeOutUp;
+}
+@Keyframes FadeInDownSmall {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.fadeInDownSmall {
+    animation-name: FadeInDownSmall;
+}
+/*</animation stuff>*/
+
+body {
+    background-image: url('../../images/barley_closeupx1536.jpg');
+    background-size: cover;
+}
+.container, .container-fluid {
+    max-width: 960px;
+}
+
+/********************
+        Navbar
+*********************/
+/*Navbar colour and fade in*/
+.navbar-default {
+    border-bottom-width: 3px;
+    border-color: rgba(144, 141, 210, 1);
+    background-color: rgba(190, 196, 208, 1);
+    transition: opacity 0.3s, border-color 0.5s, background-color 0.5s;
+}
+.navbar-brand {
+    padding: 0;
+}
+.navbar-brand img {
+    height: 100%;
+}
+/*Make buttons btn-link look like navbar links would*/
+/*.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover*/
+.navbar-default .navbar-nav>li>a {
+    display: block;
+    position: relative;
+    padding: 15px 15px;
+    line-height: 20px;
+    transition: color 0.3s;
+    color: #686664;
+    width: 100%;
+    text-align: center;
+}
+.navbar-nav a:hover, .navbar-nav a:focus {
+    color: #0a2164;
+    text-decoration: none;
+}
+.navbar-nav a:focus {
+    outline: none; /*Thins out yellow :focus border*/
+}
+/*Button for mobile*/
+.navbar-default .navbar-toggle {
+    border-color: rgb(144, 141, 210);
+}
+.navbar-default .navbar-collapse {
+    border: none;
+    box-shadow: none;
+}
+
+/**********************************
+        Content container
+**********************************/
+/*Remove padding for full width images*/
+.container-fluid {
+    position: relative;
+    padding: 80px 15px 0 15px; /*Padding top for navbar*/
+    background-color: white;
+}
+
+/*****************************
+        Text content
+*****************************/
+.carousel{
+    padding-bottom: 2em;
+}
+.tab__heading {
+    text-align: center;
+    padding-bottom: 1em;
+    color: #0a2164;
+    font-weight: bold;
+}
+.tab__heading a {
+    color: #0a2164;
+    padding-right: 0;
+    padding-left: 0;
+}
+.tab__heading a[href^='mailto:'] {
+    display: block;
+}
+.tab__heading--main {
+    padding-bottom: 0;
+    text-align: center;
+}
+.tab__heading--main img {
+    width: 60%;
+}
+.tab__heading--padded {
+    padding: 1em;
+}
+.tab__content {
+    padding: 0.5em;
+}
+
+.embed-responsive {
+    padding-bottom: 56%;
+}
+
+label {
+    color: #0a2164;
+}
+.btn-default {
+    border-color: #d29f01;
+}
+.btn-default:hover, .btn-default:focus, .btn-default:active {
+    border-color: #d29f01;
+}
+.btn.active:focus, .btn:active:focus, .btn:focus {
+    border-color: #d29f01;
+    outline-color: #d29f01;
+}
+
+/*Login form highlighting*/
+.form-control:focus, .form-control:hover {
+    border-color: #d29f01;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 6px rgba(236, 185, 27, 0.8);
+}
+input[type=checkbox]:focus, .btn:focus {
+    outline-color: #d29f01;
+}
+
+/*SVG Stuff*/
+.icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+    margin-right: 8px;
+    text-decoration: none;
+}
+.icon-phone {
+    font-size: 1.1em;
+}
+.icon-mail {
+    vertical-align: text-bottom;
+    font-size: 1.3em;
+}
+
+
+
+/*
+  Bootstrap Carousel Fade Transition (for Bootstrap 3.3.x)
+  http://stackoverflow.com/questions/18548731/bootstrap-3-carousel-fading-to-new-slide-instead-of-sliding-to-new-slide
+*/
+.carousel-fade .carousel-inner .item {
+  opacity: 0;
+  transition-property: opacity;
+}
+
+.carousel-fade .carousel-inner .active {
+  opacity: 1;
+}
+
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+}
+
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+  opacity: 1;
+}
+
+.carousel-fade .carousel-control {
+  z-index: 2;
+}
+
+/*
+  WHAT IS NEW IN 3.3: "Added transforms to improve carousel performance in modern browsers."
+  Need to override the 3.3 new styles for modern browsers & apply opacity
+*/
+@media all and (transform-3d), (-webkit-transform-3d) {
+    .carousel-fade .carousel-inner > .item.next,
+    .carousel-fade .carousel-inner > .item.active.right {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+    }
+    .carousel-fade .carousel-inner > .item.prev,
+    .carousel-fade .carousel-inner > .item.active.left {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+    }
+    .carousel-fade .carousel-inner > .item.next.left,
+    .carousel-fade .carousel-inner > .item.prev.right,
+    .carousel-fade .carousel-inner > .item.active {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+    }
+}
