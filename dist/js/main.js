@@ -1,1 +1,1 @@
-$(".carousel").carousel();
+$(document).ready(function(){$(".carousel").carousel()}),$('*[data-toggle="tab"]').click(function(){$(".navbar-collapse").hasClass("in")&&$(".navbar-toggle").click()});
