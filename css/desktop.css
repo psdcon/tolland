@@ -1,5 +1,8 @@
-/*Bar that slides up under link on :hover*/
 
+.navbar-brand {
+	height: 114px;
+}
+/*Bar that slides up under link on :hover*/
 .navbar-default .navbar-nav>li>a:after {
 	position: absolute;
 	bottom: -1px;
@@ -16,6 +19,19 @@
     opacity: 1;
     transform: translateY(0px);
 }
+#navbar{
+	clear: right;
+}
+.address address{
+	margin-bottom: 0;
+	text-align: right;
+	color: rgb(13, 29, 126);
+}
+.address a{
+	color: rgb(13, 29, 126);
+	font-size: 1.2em;
+}
+
 .card {
 	position: relative;
 	width: 80%;

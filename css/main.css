@@ -68,6 +68,7 @@
     border-top-width: 3px;
     border-bottom-width: 3px;
     border-color: rgb(13, 29, 126);
+    margin-bottom: 0;
 }
 /*Button for mobile*/
 .navbar-default .navbar-toggle {
@@ -106,7 +107,6 @@
 /*Remove padding for full width images*/
 .container-fluid {
     position: relative;
-    padding-top: 56px; /*Padding top for navbar*/
     background-color: white;
 }
 
