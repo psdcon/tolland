@@ -56,10 +56,6 @@
 }
 /*</animation stuff>*/
 
-body {
-    background-image: url('../../images/barley_closeupx1536.jpg');
-    background-size: cover cover;
-}
 .container, .container-fluid {
     max-width: 960px;
 }
@@ -69,10 +65,13 @@ body {
 *********************/
 /*Navbar colour and fade in*/
 .navbar-default {
+    border-top-width: 3px;
     border-bottom-width: 3px;
-    border-color: rgba(144, 141, 210, 1);
-    background-color: rgba(190, 196, 208, 1);
-    transition: opacity 0.3s, border-color 0.5s, background-color 0.5s;
+    border-color: rgb(13, 29, 126);
+}
+/*Button for mobile*/
+.navbar-default .navbar-toggle {
+    border-color: rgb(13, 29, 126);
 }
 .navbar-brand {
     padding: 0;
@@ -80,8 +79,6 @@ body {
 .navbar-brand img {
     height: 100%;
 }
-/*Make buttons btn-link look like navbar links would*/
-/*.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover*/
 .navbar-default .navbar-nav>li>a {
     display: block;
     position: relative;
@@ -102,14 +99,6 @@ body {
     outline-color: #d29f01;
     /*outline: none; Thins out yellow :focus border*/
 }
-/*Button for mobile*/
-.navbar-default .navbar-toggle {
-    border-color: rgb(144, 141, 210);
-}
-.navbar-default .navbar-collapse {
-    border: none;
-    box-shadow: none;
-}
 
 /**********************************
         Content container
@@ -117,21 +106,65 @@ body {
 /*Remove padding for full width images*/
 .container-fluid {
     position: relative;
-    padding: 80px 15px 15px; /*Padding top for navbar*/
+    padding-top: 56px; /*Padding top for navbar*/
     background-color: white;
 }
 
 /*****************************
-        Text content
+        Gallery
 *****************************/
-.carousel{
-    margin-bottom: 2em;
+.row-relative{
+    position: relative;
+}
+.gallery-content {
+    padding: 0;
+    position: absolute;
+    top: 0;
+}
+.main-gallery {
+    width: 100%; /* full width */
+    height: 550px;
+}
+.gallery-cell {
+    width: 100%;
+    height: 100%; /* height of gallery */
+}
+.gallery-cell img{
+    min-width: 100%;
+    min-height: 100%; /* height of gallery */
+}
+
+/*****************************
+        Tab Alignment
+*****************************/
+/*Algin tabs to the top of gallery container*/
+.tab-content {
+    position: relative;
+    height: 100%;
+    top: 0;
+    z-index: 2;
+    min-height: 550px;
+    padding-top: 10px;
+}
+
+#home{
+    color: white;
+    position: absolute;
+    bottom: 10px;
+}
+
+/*****************************
+        Tab Styling
+*****************************/
+.card {
+    background: rgba(255,255,255,.85);
+    border-radius: 2px;
+    border: 1px solid rgba(0,0,0,.1);
     box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
-    /*box-shadow: 8px 0px 6px -6px #888,-8px 0px 6px -6px #888,-8px 8px 6px -6px #888,8px 8px 6px -6px #888;*/
 }
 .tab__heading {
     text-align: center;
-    padding-bottom: 1em;
+    padding: 8px;
     color: #0a2164;
     font-weight: bold;
 }
@@ -143,22 +176,12 @@ body {
 .tab__heading a[href^='mailto:'] {
     display: block;
 }
-.tab__heading--main {
-    padding-bottom: 0;
-    text-align: center;
-}
-.tab__heading--main img {
-    width: 60%;
-}
-.tab__heading--padded {
-    padding: 1em;
-}
 .tab__content {
     padding: 0.5em;
 }
 
 .embed-responsive {
-    padding-bottom: 56%;
+    padding-bottom: 100%;
 }
 
 label {
@@ -201,59 +224,14 @@ input[type=checkbox]:focus, .btn:focus {
     font-size: 1.1em;
 }
 
-
-
-/*
-  Bootstrap Carousel Fade Transition (for Bootstrap 3.3.x)
-  http://stackoverflow.com/questions/18548731/bootstrap-3-carousel-fading-to-new-slide-instead-of-sliding-to-new-slide
-*/
-.carousel-fade .carousel-inner .item {
-  opacity: 0;
-  transition-property: opacity;
+/*****************************
+        Footer
+*****************************/
+.footer-sponsor{
+    width: 19%;
+    display: inline-block;
+    text-align: center;
 }
-
-.carousel-fade .carousel-inner .active {
-  opacity: 1;
-}
-
-.carousel-fade .carousel-inner .active.left,
-.carousel-fade .carousel-inner .active.right {
-  left: 0;
-  opacity: 0;
-  z-index: 1;
-}
-
-.carousel-fade .carousel-inner .next.left,
-.carousel-fade .carousel-inner .prev.right {
-  opacity: 1;
-}
-
-.carousel-fade .carousel-control {
-  z-index: 2;
-}
-
-/*
-  WHAT IS NEW IN 3.3: "Added transforms to improve carousel performance in modern browsers."
-  Need to override the 3.3 new styles for modern browsers & apply opacity
-*/
-@media all and (transform-3d), (-webkit-transform-3d) {
-    .carousel-fade .carousel-inner > .item.next,
-    .carousel-fade .carousel-inner > .item.active.right {
-      opacity: 0;
-      -webkit-transform: translate3d(0, 0, 0);
-              transform: translate3d(0, 0, 0);
-    }
-    .carousel-fade .carousel-inner > .item.prev,
-    .carousel-fade .carousel-inner > .item.active.left {
-      opacity: 0;
-      -webkit-transform: translate3d(0, 0, 0);
-              transform: translate3d(0, 0, 0);
-    }
-    .carousel-fade .carousel-inner > .item.next.left,
-    .carousel-fade .carousel-inner > .item.prev.right,
-    .carousel-fade .carousel-inner > .item.active {
-      opacity: 1;
-      -webkit-transform: translate3d(0, 0, 0);
-              transform: translate3d(0, 0, 0);
-    }
+.footer-sponsor img{
+    max-width: 70%;
 }

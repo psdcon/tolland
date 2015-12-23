@@ -6,7 +6,7 @@
 	left: 0;
 	width: 100%;
 	height: 3px;
-	background-color: rgb(144, 141, 210);
+	background-color: rgb(13, 29, 126);
 	content: '';
 	opacity: 0;
 	transition: opacity 0.3s, transform 0.3s;
@@ -16,8 +16,13 @@
     opacity: 1;
     transform: translateY(0px);
 }
-.carousel{
-    padding-bottom: 0;
+.card {
+	position: relative;
+	width: 80%;
+	left: 10%;
+}
+#home {
+	font-size: 1.2em;
 }
 .embed-responsive {
 	/*16 x 9 ratio*/

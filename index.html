@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="James Tolland &amp; Co Website">
+    <meta name="description" content="James Tolland &amp; Co. LTD. Website">
     <!-- Favicons from http://realfavicongenerator.net/ -->
     <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-touch-icon-60x60.png">
@@ -29,12 +29,12 @@
     <meta name="msapplication-config" content="images/favicon/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
 
-    <title>James Tolland &amp; Co</title>
-    <!-- Bootstrap core CSS -->
+    <title>James Tolland &amp; Co. LTD.</title>
+    
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
     <link href="dist/css/main.css" rel="stylesheet">
     <link href="dist/css/desktop.css" rel="stylesheet" media="(min-width: 768px)">
+    <link rel="stylesheet" href="css/flickity.css" media="screen">
 </head>
 
 <body>
@@ -49,14 +49,18 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="#home" aria-controls="home" role="tab" data-toggle="tab">
-                    <img src="images/tolland.png" alt="Tolland">
+                    <img src="images/tolland/tolland.png" alt="Tolland">
                 </a>
             </div>
+            
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right" role="tablist">
                     <!-- Nav tabs -->
                     <li role="presentation" class="active">
                         <a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#about" aria-controls="about" role="tab" data-toggle="tab">About us</a>
                     </li>
                     <li role="presentation">
                         <a href="#contact" aria-controls="contact" role="tab" data-toggle="tab">Contact</a>
@@ -70,121 +74,115 @@
         </div>
     </nav>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-12">
-                
-            </div>
-        </div>
-        <!-- Tab panes -->
-        <div class="tab-content">
-            <div role="tabpanel" class="tab-pane active" id="home">
-                <div class="row">
-                    <!-- Slider -->
-                    <div class="col-sm-6 col-sm-push-6">
-                        <div class="carousel slide carousel-fade" data-ride="carousel">
-                            <div class="carousel-inner" role="listbox">
-                                <div class="item active">
-                                    <img src="images/barleyx1536.jpg" alt="barley">
-                                </div>
-                                <div class="item">
-                                    <img src="images/barley_closeupx1536.jpg" alt="barley_closeup">
-                                </div>
-                                <div class="item">
-                                    <img src="images/barley_wetx1536.jpg" alt="barley_wet">
-                                </div>
-                                <div class="item">
-                                    <img src="images/grainx1536.jpg" alt="grain">
-                                </div>
-                                <div class="item">
-                                    <img src="images/hillsx1536.jpg" alt="hills">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Main Info -->
-                    <div class="col-sm-6 col-sm-pull-6">
-                        <div class="tab__heading--main">
-                            <img src="images/tolland_big.png" alt="Tolland">
-                        </div>
-                        <div class="tab__content">
-                            <p>Since 1931 James Tolland &amp; Co Ltd, has been supplying grains and feed ingredients to the animal feed industry within the United Kingdom and Ireland. Operating out of the Port of Belfast customers can collect goods from our quayside store or from other ports within the island of Ireland.</p>
-                        
-                            <p>As members of NIGTA, COCERAL and the Organic Food Federation, all goods are quality assured, sourced from certified companies providing full traceability thus giving you peace of mind.</p>
-                        
-                            <p>We offer our customers a wide range of agricultural ingredients including Cereals, Wheatfeed, Soya, Rapemeal, Soya Hulls, Corn Gluten, Corn Distillers, Sugar Beet and Fishmeal.</p>
-                        
-                            <p>Our aim is to provide customers with up-to-date market information so they can react to market trends and through our portal, assist with their management of all financial and stock transactions with us.</p>
-                        </div>
-                    </div>
+        <div class="row row-relative">
+            <!-- Tab panes -->        
+            <div class="col-xs-12 tab-content">
+                <div role="tabpanel" class="tab-pane active" id="home">
+                    Supplying compounders, feed blenders and merchants throughout <br>
+                    the UK and Ireland a comprehensive range of animal feed ingredients
                 </div>
-            </div>
-
-            <div role="tabpanel" class="tab-pane" id="contact">
-                <div class="tab__heading">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <a href="mailto:traders@jamestolland.co.uk">
-                                <svg class="icon icon-mail"><use xlink:href="#icon-mail"></use></svg>traders@jamestolland.co.uk
-                            </a>
-                        </div>
-                        <div class="col-sm-6">
-                            <a href="tel:02890755561">
-                                <svg class="icon icon-phone"><use xlink:href="#icon-phone"></use></svg>028 9075 5561
-                            </a>
-                        </div>
+                <div role="tabpanel" class="tab-pane card" id="about">
+                    <div class="tab__heading">
+                        About us
+                    </div>
+                    <div class="tab__content">
+                        <p>Since 1931 James Tolland &amp; Co Ltd, has been supplying grains and feed ingredients to the animal feed industry within the United Kingdom and Ireland. Operating out of the Port of Belfast customers can collect goods from our quayside store or from other ports within the island of Ireland.</p>
+                    
+                        <p>As members of NIGTA, COCERAL and the Organic Food Federation, all goods are quality assured, sourced from certified companies providing full traceability thus giving you peace of mind.</p>
+                    
+                        <p>We offer our customers a wide range of agricultural ingredients including Cereals, Wheatfeed, Soya, Rapemeal, Soya Hulls, Corn Gluten, Corn Distillers, Sugar Beet and Fishmeal.</p>
+                    
+                        <p>Our aim is to provide customers with up-to-date market information so they can react to market trends and through our portal, assist with their management of all financial and stock transactions with us.</p>
                     </div>
                 </div>
 
-                <div class="embed-responsive">
-                    <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed/v1/place?q=James%20Tolland%20%26%20Co%20Ltd%2C%20Milewater%20Road%2C%20Belfast%2C%20United%20Kingdom&key=AIzaSyCSNF9xa5Xb3DDeQx5esehgLFqMqRbGdRw" allowfullscreen></iframe>
-                </div>
-            </div>
-
-
-            <div role="tabpanel" class="tab-pane" id="login">
-                <div class="tab__heading">
-                    Login
-                </div>
-                <div class="tab__content">
-                    <form class="form-horizontal" role="form" onsubmit="return false;">
-                        <div class="form-group">
-                            <label class="control-label col-sm-2" for="login">Username:</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" name="login" placeholder="Enter username">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-2" for="password">Password:</label>
-                            <div class="col-sm-9">
-                                <input type="password" class="form-control" name="password" placeholder="Enter password">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-9">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="rememberMe"> Remember me</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-3">
-                                <button type="submit" class="btn btn-default btn-block">
-                                    <span class="glyphicon glyphicon-log-in"></span> Login
-                                </button>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <p style="text-align:center;" class="col-sm-offset-2 col-sm-3">
-                                Need help?
-                                <a href="mailto:traders@jamestolland.co.uk?Subject=Portal Help" target="_top">
-                                    Click here!
+                <div role="tabpanel" class="tab-pane card" id="contact">
+                    <div class="tab__heading">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <a href="mailto:traders@jamestolland.co.uk">
+                                    <svg class="icon icon-mail"><use xlink:href="#icon-mail"></use></svg>traders@jamestolland.co.uk
                                 </a>
-                            </p>
+                            </div>
+                            <div class="col-sm-6">
+                                <a href="tel:02890755561">
+                                    <svg class="icon icon-phone"><use xlink:href="#icon-phone"></use></svg>028 9075 5561
+                                </a>
+                            </div>
                         </div>
-                    </form>
+                    </div>
+
+                    <div class="embed-responsive">
+                        <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed/v1/place?q=James%20Tolland%20%26%20Co%20Ltd%2C%20Milewater%20Road%2C%20Belfast%2C%20United%20Kingdom&key=AIzaSyCSNF9xa5Xb3DDeQx5esehgLFqMqRbGdRw" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+
+                <div role="tabpanel" class="tab-pane card" id="login">
+                    <div class="tab__heading">
+                        Login
+                    </div>
+                    <div class="tab__content">
+                        <form class="form-horizontal" role="form" onsubmit="return false;">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="login">Username:</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="login" placeholder="Enter username">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="password">Password:</label>
+                                <div class="col-sm-9">
+                                    <input type="password" class="form-control" name="password" placeholder="Enter password">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-9">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="rememberMe"> Remember me</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-3">
+                                    <button type="submit" class="btn btn-default btn-block">
+                                        <span class="glyphicon glyphicon-log-in"></span> Login
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <p style="text-align:center;" class="col-sm-offset-2 col-sm-3">
+                                    Need help?
+                                    <a href="mailto:traders@jamestolland.co.uk?Subject=Portal Help" target="_top">
+                                        Click here!
+                                    </a>
+                                </p>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
+
+            <div class="col-xs-12 gallery-content">
+                <div class="main-gallery js-flickity" data-flickity-options='{ "cellAlign": "center", "setGallerySize": false, "wrapAround": true, "autoPlay": 5000, "prevNextButtons": false, "pageDots": false}'>
+                    <div class="gallery-cell"><img src="images/slider/Photo1.jpg" alt=""></div>
+                    <div class="gallery-cell"><img src="images/slider/Photo2.jpg" alt=""></div>
+                    <div class="gallery-cell"><img src="images/slider/Photo3.jpg" alt=""></div>
+                    <div class="gallery-cell"><img src="images/slider/Photo4.jpg" alt=""></div>
+                    <div class="gallery-cell"><img src="images/slider/Photo5.jpg" alt=""></div>
+                    <div class="gallery-cell"><img src="images/slider/Photo6.jpg" alt=""></div>
+                    <div class="gallery-cell"><img src="images/slider/Photo7.jpg" alt=""></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="footer-sponsor"><img src="images/sponsors/coceral.png" alt=""></div>
+            <div class="footer-sponsor"><img src="images/sponsors/OFF.png" alt=""></div>
+            <div class="footer-sponsor"><img src="images/sponsors/FoodFortress.png" alt=""></div>
+            <div class="footer-sponsor"><img src="images/sponsors/Nifda.gif" alt=""></div>
+            <div class="footer-sponsor"><img src="images/sponsors/Nigta.png" alt=""></div>
         </div>
     </div>
     
@@ -208,6 +206,7 @@
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
     <script src="dist/js/jquery.js"></script>
     <script src="dist/js/bootstrap.js"></script>
+    <script src="js/flickity.pkgd.js"></script>
     <script src="js/main.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="dist/js/ie10-viewport-bug-workaround.js"></script>
