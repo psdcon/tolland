@@ -1,6 +1,6 @@
 
 .navbar-brand {
-	height: 114px;
+	height: 94px;
 }
 /*Bar that slides up under link on :hover*/
 .navbar-default .navbar-nav>li>a:after {
@@ -22,6 +22,14 @@
 #navbar{
 	clear: right;
 }
+
+.main-gallery {
+	height: 550px;
+}
+.tab-content {
+	min-height: 550px;
+}
+
 .address address{
 	margin-bottom: 0;
 	text-align: right;
