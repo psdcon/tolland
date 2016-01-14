@@ -122,10 +122,12 @@
     padding: 0;
     position: absolute;
     top: 0;
+    bottom: 0;
 }
 .main-gallery {
     width: 100%; /* full width */
-    height: 80vh;
+    min-height: 80vh;
+    height: 100%;
 }
 .gallery-cell {
     width: 100%;
@@ -160,6 +162,7 @@
         Tab Styling
 *****************************/
 .card {
+    margin-bottom: 10px;
     background: rgba(255,255,255,.85);
     border-radius: 2px;
     border: 1px solid rgba(0,0,0,.1);
