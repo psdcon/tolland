@@ -183,10 +183,18 @@
     padding: 0.5em;
 }
 
+/*Contact*/
+.contact__titles{
+    text-align: left;
+}
+.contact__emails{
+    text-align: center;
+}
 .embed-responsive {
     padding-bottom: 100%;
 }
 
+/*Login*/
 label {
     color: #0a2164;
 }
