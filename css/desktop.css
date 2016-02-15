@@ -15,7 +15,9 @@
 	transition: opacity 0.3s, transform 0.3s;
 	transform: translateY(4px);
 }
-.navbar-default .navbar-nav>.active>a:after, .navbar-default .navbar-nav>.active>a:focus:after, .navbar-default .navbar-nav>.active>a:hover:after {
+.navbar-default .navbar-nav>.active>a:after, 
+.navbar-default .navbar-nav>li>a:focus:after, 
+.navbar-default .navbar-nav>li>a:hover:after {
     opacity: 1;
     transform: translateY(0px);
 }
