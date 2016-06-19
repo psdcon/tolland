@@ -30,12 +30,12 @@
     <meta name="theme-color" content="#ffffff">
 
     <title>James Tolland &amp; Co. LTD.</title>
-    <meta name="description" content="James Tolland & Co Ltd specialize in the supply of a comprehensive range of feed raw materials to Compounders, Feed blenders and Merchants throughout the UK and Ireland.">
-    
+    <meta name="description" content="James Tolland & Co Ltd specialise in the supply of a comprehensive range of feed raw materials to Compounders, Feed blenders and Merchants throughout the UK and Ireland.">
+
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="dist/css/main.css" rel="stylesheet">
     <link href="dist/css/desktop.css" rel="stylesheet" media="(min-width: 768px)">
-    <link rel="stylesheet" href="css/flickity.css" media="screen">
+    <link rel="stylesheet" href="dist/css/flickity.css" media="screen">
 </head>
 
 <body>
@@ -50,10 +50,10 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="#home" aria-controls="home" role="tab" data-toggle="tab">
-                    <img src="images/tolland/tolland-cropped.png" alt="Tolland">
+                    <img src="images/tolland.png" alt="Tolland">
                 </a>
             </div>
-            
+
             <div class="address navbar-collapse collapse navbar-right">
                 <address>
                     <a href="tel:02890755561">028 9075 5561</a> <br>
@@ -83,10 +83,10 @@
     </nav>
     <div class="container-fluid">
         <div class="row row-relative">
-            <!-- Tab panes -->        
+            <!-- Tab panes -->
             <div class="col-xs-12 tab-content">
                 <div role="tabpanel" class="tab-pane active" id="home">
-                    James Tolland & Co Ltd specialize in the supply of a comprehensive range of feed raw materials to Compounders, Feed blenders and Merchants throughout the UK and Ireland.
+                    <p>James Tolland & Co Ltd, specialists in the supply of a comprehensive range of feed raw materials to compounders, feed blenders and merchants throughout the UK and Ireland</p>
                 </div>
                 <div role="tabpanel" class="tab-pane card" id="about">
                     <div class="tab__heading">
@@ -97,7 +97,7 @@
 
                         <p>Working from the quayside of an international port we trade a wide range of feed ingredients including Barley, Wheat, Maize, Wheatfeed, Soya, Corn Gluten, Corn Distillers, Sugarbeet and Fishmeal.</p>
 
-                        <p>As members of the Northern Ireland Grain Trade, Food Fortress Ireland, Organic food federation and COCEARL, all goods are quality assured and sourced from certified companies providing full traceability thus giving peace of mind to the end user.</p>
+                        <p>As members of the Northern Ireland Grain Trade Association (NIGTA), Food Fortress Ireland, Organic Food Federation and COCERAL, all goods are quality assured and sourced from certified companies providing full traceability thus giving peace of mind to the end user.</p>
 
                         <p>The Food Fortress scheme developed with Queen's University institute for Global Food Security gives NIGTA a world leading position in the field of feed assurance.</p>
 
@@ -156,7 +156,9 @@
                         Login
                     </div>
                     <div class="tab__content">
-                        <form class="form-horizontal" role="form" onsubmit="return false;">
+                        <p style="color:#0a2164;text-align:center;">This useful service enables authorised customers to check collected weights, contract balances, forward contracts, invoices and statements etc online 24/7</p>
+                        <p style="color:#0a2164;text-align:center;">Please contact <a href="mailto:paul@jamestolland.co.uk">paul@jamestolland.co.uk</a> for authorisation</p>
+                        <form class="form-horizontal" role="form" action="http://172.15.0.1/login" method="POST">
                             <div class="form-group">
                                 <label class="control-label col-sm-2" for="login">Username:</label>
                                 <div class="col-sm-9">
@@ -218,7 +220,7 @@
             <a target="_blank" href="http://www.nigta.co.uk/" class="footer-sponsor"><img src="images/sponsors/Nigta.png" alt="Sponsor Image"></a>
         </div>
     </div>
-    
+
     <!-- SVG Icons -->
     <div style="display:none;">
         <svg xmlns="http://www.w3.org/2000/svg">
@@ -239,8 +241,8 @@
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
     <script src="dist/js/jquery.js"></script>
     <script src="dist/js/bootstrap.js"></script>
-    <script src="js/flickity.pkgd.js"></script>
-    <script src="js/main.js"></script>
+    <script src="dist/js/flickity.pkgd.js"></script>
+    <script src="dist/js/main.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="dist/js/ie10-viewport-bug-workaround.js"></script>
 </body>

@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var gutil = require('gulp-util');
 var uglify = require('gulp-uglify'); // Js
-var minifyCss = require('gulp-minify-css'); // css
+var cleanCSS = require('gulp-clean-css'); // css
 var autoprefixer = require('gulp-autoprefixer'); // css
 var browserSync = require('browser-sync').create();
 
@@ -25,7 +25,7 @@ gulp.task('watch', ['css'], function() {
 gulp.task('css', function() {
     return gulp.src("css/*.css")
         .pipe(autoprefixer())
-        .pipe(minifyCss({compatibility: 'ie10'}))
+        .pipe(cleanCSS({compatibility: 'ie8'}))
         .pipe(gulp.dest('dist/css'))
         .pipe(browserSync.stream());
 });

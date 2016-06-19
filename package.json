@@ -1,0 +1,28 @@
+{
+  "name": "tolland",
+  "version": "3.0.0",
+  "description": "Information and login page for James Tolland",
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.13.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-clean-css": "^2.0.10",
+    "gulp-uglify": "^1.5.3",
+    "gulp-util": "^3.0.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/psdcon/tolland.git"
+  },
+  "author": "Paul Connolly",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/psdcon/tolland/issues"
+  },
+  "homepage": "https://github.com/psdcon/tolland#readme"
+}
