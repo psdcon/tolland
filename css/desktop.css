@@ -1,0 +1,46 @@
+.navbar-default {
+    border-color: rgba(144, 141, 210, 0.7);
+    background-color: rgba(190, 196, 208, 0.7);
+}
+.navbar-default:hover {
+    border-color: rgba(144, 141, 210, 1);
+    background-color: rgba(190, 196, 208, 1);
+}
+
+/*Bar that slides up under link on :hover*/
+.navbar-default .btn-link:after {
+	position: absolute;
+	bottom: -1px;
+	left: 0;
+	width: 100%;
+	height: 3px;
+	background-color: rgb(144, 141, 210);
+	content: '';
+	opacity: 0;
+	transition: opacity 0.3s, transform 0.3s;
+	transform: translateY(4px);
+}
+.navbar-default .btn-link:hover::after,.navbar-default .btn-link:focus::after { 
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.card {
+    width: 60%;
+    left: 20%;
+    top: 40px;
+}
+.card__heading a {
+    padding-right: 2em;
+    padding-left: 2em;
+}
+.card__heading a[href^="mailto:"] {
+    display: inline;
+}
+.card__content {
+    padding: 1em;
+}
+.embed-responsive {
+	/*16 x 9 ratio*/
+    padding-bottom: 56.25%;
+}
